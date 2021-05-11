@@ -1,0 +1,5 @@
+.idea
+node_modules
+.env
+users.txt
+users.json
