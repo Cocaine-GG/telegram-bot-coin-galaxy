@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "telegram-coin-galaxy-bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "telegraf": "^4.3.0"
   }
 }
