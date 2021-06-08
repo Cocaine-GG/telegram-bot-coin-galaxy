@@ -7,6 +7,14 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 const app = express()
 const PORT = process.env.PORT || 5000
 
+app.get('/',(req,res)=>{
+	res.end(`
+		<h1>Welcome CoinGalaxyBot</h1>
+		<h2>Support or wishes <a href="https://t.me/cocaine_gg">Daniel Kondratiuk</a></h2>
+		<h2>Source code <a href="https://github.com/Cocaine-GG/telegram-bot-coin-galaxy">here</a></h2>
+	`)
+})
+
 app.listen(PORT, () => {
 	console.log(`Server has been started on port ${PORT}...`)
 	bot.start((ctx) => ctx.replyWithMarkdown(`Welcome to *${ctx.botInfo.first_name}*
