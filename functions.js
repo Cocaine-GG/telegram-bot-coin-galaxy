@@ -1,6 +1,5 @@
 const axios = require('axios')
 const fs = require('fs')
-const API_URL = process.env.API_URL
 let USERS = []
 
 async function actionHandler(ctx){
@@ -19,7 +18,7 @@ async function actionHandler(ctx){
 		savedUsers(USERS)
 	}
 
-	const url = API_URL + firstValue + '_' + secondValue
+	const url = process.env.API_URL + firstValue + '_' + secondValue
 	if (firstValue && secondValue) {
 		try {
 			const {data} = await axios.get(url)
