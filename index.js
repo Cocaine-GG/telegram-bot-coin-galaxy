@@ -32,15 +32,23 @@ bot.command('go', ctx => {
 	ctx.telegram.sendMessage(ctx.chat.id, 'Выберете пару', {
 		reply_markup: {
 			resize_keyboard: true, // one_time_keyboard: true,
-			keyboard: [[{text: 'WEC USD', callback_data: 'wec usd'}, {
-				text: 'RA USD', callback_data: 'ra usd'
-			}, {text: 'WEC RA', callback_data: 'wec ra'}],]
+			keyboard: [
+				[
+					{text: 'WEC USD', callback_data: 'wec usd'},
+					{text: 'WEC USDT', callback_data: 'wec usdt'}
+				],
+				[
+					{text: 'RA USD', callback_data: 'ra usd'},
+					{text: 'WEC RA', callback_data: 'wec ra'}
+				]
+			]
 		}
 	})
 })
 
 bot.hears(/\w/, actionHandler)
 bot.action('wec usd', actionHandler)
+bot.action('wec usdt', actionHandler)
 bot.action('wec ra', actionHandler)
 bot.action('ra usd', actionHandler)
 bot.launch()
